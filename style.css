@@ -1,0 +1,62 @@
+body {
+  background-color: beige;
+}
+
+#instructions {
+  max-width: 500px;
+  margin-bottom: 24px;
+}
+
+#box {
+  width: 500px;
+  font-size: 0;
+}
+
+.number {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 24px;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.noFactor {
+  opacity: 25%;
+}
+
+.you {
+  background-color: #22b14c;
+  color: white;
+  opacity: 100%;
+}
+
+.taxman {
+  background-color: red;
+  color: white;
+  opacity: 100%;
+}
+
+#score {
+  width: 500px;
+  font-size: 24px;
+  text-align: center;
+  overflow: auto;
+}
+
+#youParagraph {
+  float: left;
+}
+
+#taxmanParagraph {
+  float: right;
+}
+
+#messageParagraph {
+  display: inline-block;
+  color: #ff4c00;
+}
