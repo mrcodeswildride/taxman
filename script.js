@@ -11,12 +11,14 @@ for (let number of numbers) {
 }
 
 function clickNumber() {
-  if (!this.classList.contains(`noFactor`) &&
-      !this.classList.contains(`you`) &&
-      !this.classList.contains(`taxman`)) {
+  if (
+    !this.classList.contains(`noFactor`) &&
+    !this.classList.contains(`you`) &&
+    !this.classList.contains(`taxman`)
+  ) {
     this.classList.add(`you`)
 
-    let selectedValue = Number(this.innerHTML) 
+    let selectedValue = Number(this.innerHTML)
     yourTotal += selectedValue
     youParagraph.innerHTML = `You: ${yourTotal}`
 
@@ -30,9 +32,11 @@ function addTaxmanTotal(selectedValue) {
   for (let number of numbers) {
     let numberValue = Number(number.innerHTML)
 
-    if (!number.classList.contains(`you`) &&
-        !number.classList.contains(`taxman`) &&
-        selectedValue % numberValue == 0) {
+    if (
+      !number.classList.contains(`you`) &&
+      !number.classList.contains(`taxman`) &&
+      selectedValue % numberValue == 0
+    ) {
       number.classList.add(`taxman`)
 
       taxmanTotal += numberValue
@@ -55,10 +59,12 @@ function hasFactor(number) {
   for (let otherNumber of numbers) {
     let otherNumberValue = Number(otherNumber.innerHTML)
 
-    if (otherNumber != number &&
-        !otherNumber.classList.contains(`you`) &&
-        !otherNumber.classList.contains(`taxman`) &&
-        numberValue % otherNumberValue == 0) {
+    if (
+      otherNumber != number &&
+      !otherNumber.classList.contains(`you`) &&
+      !otherNumber.classList.contains(`taxman`) &&
+      numberValue % otherNumberValue == 0
+    ) {
       return true
     }
   }
@@ -72,11 +78,9 @@ function checkGameOver() {
 
     if (yourTotal > taxmanTotal) {
       messageParagraph.innerHTML = `You win`
-    }
-    else if (taxmanTotal > yourTotal) {
+    } else if (taxmanTotal > yourTotal) {
       messageParagraph.innerHTML = `Taxman wins`
-    }
-    else {
+    } else {
       messageParagraph.innerHTML = `Tie game`
     }
   }
@@ -84,9 +88,11 @@ function checkGameOver() {
 
 function isGameOver() {
   for (let number of numbers) {
-    if (!number.classList.contains(`noFactor`) &&
-        !number.classList.contains(`you`) &&
-        !number.classList.contains(`taxman`)) {
+    if (
+      !number.classList.contains(`noFactor`) &&
+      !number.classList.contains(`you`) &&
+      !number.classList.contains(`taxman`)
+    ) {
       return false
     }
   }
@@ -96,10 +102,9 @@ function isGameOver() {
 
 function addTaxmanGameOver() {
   for (let number of numbers) {
-    if (!number.classList.contains(`you`) &&
-        !number.classList.contains(`taxman`)) {
+    if (!number.classList.contains(`you`) && !number.classList.contains(`taxman`)) {
       number.classList.add(`taxman`)
-      taxmanTotal += Number(number.innerHTML)  
+      taxmanTotal += Number(number.innerHTML)
     }
   }
 
